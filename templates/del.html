@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}
+DEL_PAGE
+{%endblock title %}
+
+{% block content %}
+<header>
+<h1> Hello this is CREATE_PAGE </h1>
+</header>
+
+<main>
+    <form action="" method="POST">
+    <!-- I tried it without {% csrf_token %} and the server worked correctly  -->
+        {% csrf_token %}
+    
+        <!-- <p>If you wanna delete this{{ post.name }} press <strong>OK</strong>,Else press Cancel ?</p> -->
+        <p>If you wanna delete this press <strong>OK</strong>,Else press Cancel ?</p>
+
+        <input type="submit" value="OK">
+        <button><a href="{% url 'details' post.pk %}">Cancel</a></button>
+      </form>
+</main>
+
+{% endblock content %}
