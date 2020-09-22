@@ -1,0 +1,11 @@
+h1{
+    font-size: 48px;
+    color: red;
+}
+ul{
+    list-style: upper-roman;
+}
+a{
+    font-size: 38px;
+    text-decoration: none;
+}
