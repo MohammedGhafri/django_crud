@@ -55,3 +55,30 @@ class for_test(TestCase):
         post_response = self.client.post(reverse('delete', args='1'), follow=True)
         self.assertRedirects(post_response, reverse('list'), status_code=302)
 
+
+class Test_names_of_routes(TestCase):
+    """
+    This test is valid just for home page and create page,
+    Becuase they are static routes. Where Update and details and delete are dynamic routes and they are using the model and PK
+    """
+   
+    def test_home_list(self):
+        """
+        Check for the right path to the desired page
+        """
+        url = reverse('list')
+        response = self.client.get(url)
+        actual= 'list.html'
+        self.assertTemplateUsed(response,actual)
+    
+    def test_Create_route(self):
+        """
+        Check for the right path to the desired page
+        """
+        url = reverse('create')
+        response = self.client.get(url)
+        actual= 'create.html'
+        self.assertTemplateUsed(response,actual)
+    
+   
+    
