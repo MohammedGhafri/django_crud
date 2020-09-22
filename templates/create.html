@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}
+CREATE_PAGE
+{%endblock title %}
+
+{% block content %}
+<header>
+<h1> Hello this is CREATE_PAGE </h1>
+</header>
+
+<main>
+<form action="" method="POST">
+    <!-- I tried it without {% csrf_token %} and the server worked correctly  -->
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="SAVE">
+
+</form>
+</main>
+
+{% endblock content %}
