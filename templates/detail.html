@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %}
+DETAILS_PAGE
+{%endblock title %}
+
+{% block content %}
+<header>
+<h1> Hello This is DETAILS_PAGE</h1>
+</header>
+
+<main>
+   <div>
+   <h2>{{post.title}}</h2> 
+    <h3>{{post.author}}</h3>
+    <p>{{post.body}}</p>
+   </div>
+</main>
+
+{% endblock content %}

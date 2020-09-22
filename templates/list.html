@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %}
+LIST_PAGE
+{%endblock title %}
+
+{% block content %}
+<header>
+<h1> Hello </h1>
+</header>
+
+<main>
+    <ul>
+        {% for food in object_list %}
+        <li>
+            
+            <a href="{% url 'details' food.pk%}">{{food.title}}</a>
+            
+        </li>
+        
+        {%endfor%}
+
+    </ul>
+</main>
+
+{% endblock content %}
