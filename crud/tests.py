@@ -54,6 +54,17 @@ class for_test(TestCase):
         """
         post_response = self.client.post(reverse('delete', args='1'), follow=True)
         self.assertRedirects(post_response, reverse('list'), status_code=302)
+        
+    
+    def test_delete_more_deep(self):
+        """
+        To test the delete process, we check if the deleted things was deleted or not by enssure it not contain 
+        in the desired page.
+        """
+        post_response = self.client.post(reverse('delete', args='1'), follow=True)
+        self.assertRedirects(post_response, reverse('list'), status_code=302)
+        del_res=self.client.get(reverse('list'))
+        self.assertNotContains(del_res,'Kuftah')
 
 
 class Test_names_of_routes(TestCase):
